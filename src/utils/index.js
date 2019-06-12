@@ -32,7 +32,7 @@ export function renderTime (date) {
 }
 
 /**
- * Created by jiachenpan on 16/11/18.
+ * Created by charles on 16/11/18.
  */
 // 将时间格式化
 export function parseTime (time, cFormat) {
@@ -71,4 +71,8 @@ export function parseTime (time, cFormat) {
     return value || 0
   })
   return timeStr
+}
+export function getUrlKey (name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(/|&|#|;|$)').exec(location.href) ||
+                ['', ''])[1].replace(/\+/g, '%20')) || null
 }
